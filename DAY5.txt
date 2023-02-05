@@ -1,0 +1,165 @@
+`							DAY-5
+
+=========================================================================================
+IIFE
+=========================================================================================================
+
+1.(a) Print odd numbers in an array:
+
+(function (numbers) {
+  let odd = numbers.filter(num => num % 2 !== 0);
+  console.log(odd);
+})([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+
+============================================================================================
+
+(b)convert all the strings to title caps in a string array 
+
+(function (array) {
+  let capital = array.map(str => str.charAt(0).toUpperCase() + str.slice(1).toLowerCase());
+  console.log(capital);
+})(['hi', 'guvi', 'fiddle' , 'meta']);
+
+
+=============================================================================================================
+(c)Print the sum of numbers in an array
+
+(function (arr) {
+  let sumofnumbers = arr.reduce((total, num) => total + num, 0);
+  console.log(sumofnumbers);
+})([1, 2, 3, 4]);
+
+
+=========================================================================================================
+(d)print prime numbers in an array
+
+(function (arr) {
+  let numbers = num => {
+    for (let i = 2; i < num; i++)
+    {
+      if (num % i === 0)
+      {
+        return false;
+      }
+    }
+    return num !== 1;
+  };
+
+  let prime = arr.filter(num => numbers(num));
+  console.log(prime);
+})([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+==============================================================================================
+
+(e)Print the palindrome words in an array
+
+
+function (arr) {
+  let words = word => {
+    let reverse = word.split("").reverse().join("");
+    return word === reverse;
+  };
+
+  let palindromes = arr.filter(word => words(word));
+  console.log(palindromes);
+})(["malayalam", "guvi", "deed", "peep"]);
+
+
+=======================================================================================================
+
+(g) Remove duplicates from an array
+
+((function (arr) {
+  let duplicate = arr.filter((element, index) => arr.indexOf(element) === index);
+  console.log(duplicate);
+})(['a', 2, 'a', 4, 5, 124, 323, 3]))
+
+
+=========================================================================================================
+(h) Rotate an array by k times.
+
+(function (array, kvalue) {
+  for (let i = 0; i < kvalue; i++) {
+    array.unshift(array.pop());
+  }
+  console.log(array);
+})([1, 2, 3, 4, 5], 2);
+
+
+================================================================================================
+ARROW FUNCTION
+==================================================================================================
+
+3.(a) Print odd numbers in an array:
+
+let Numbers = (arr) => {
+  let odd = arr.filter(num => num % 2 !== 0);
+  console.log(odd);
+};
+
+Numbers([12323, 3212, 13233, 3123334, 3335, 323603, 7277, 89889, 9]);
+
+
+
+==========================================================================================================
+
+(b)convert all the strings to title caps in a string array 
+
+let words = (array) => {
+  let capital = array.map(str => str.charAt(0).toUpperCase() + str.slice(1));
+  console.log(capital);
+};
+
+words(['hi', 'guvi', 'meta' , 'fiddle']);
+
+=========================================================================================================
+
+(c) Print the sum of numbers in an array
+
+let numbers = (array) => {
+  let sumOfnumbers = array.reduce((total, num) => total + num, 0);
+  console.log(sumOfnumbers);
+};
+
+numbers([1, 2, 3, 4]);
+
+============================================================================================================
+(d)print the prime numbers in an array.
+
+let number = num => {
+  if (num <= 1)
+  return false;
+  for (let i = 2; i < num; i++)
+  {
+    if (num % i === 0) return false;
+  }
+  return true;
+};
+
+let getPrimeNumbers = (arr) => {
+  let primeNumbers = arr.filter(num => number(num));
+  console.log(primeNumbers);
+};
+
+getPrimeNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+=============================================================================================================
+
+
+
+(e)Return all palindromes in an array
+
+let words = str => {
+  let reverse = str.split('').reverse().join('');
+  return str === reverse;
+};
+
+let palindromes = arr => {
+  let palindromes = arr.filter(word => words(word));
+  console.log(palindromes);
+};
+
+palindromes(['malayalam', 'guvi', 'deed', 'nerd']);
+
+=========================================================================================================
